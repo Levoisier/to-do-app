@@ -1,7 +1,14 @@
+:root{
+  --bg1:#ff2222;
+  --bg2:#00ccff;
+  --bg3:#22e622;
+  --i:2;
+}
+
 .progress-bar-container {
   width: 100%;
   height: 20px;
-  background-color: #df1111;
+  background-color: var(--bg1);
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: 20px;
@@ -9,14 +16,21 @@
 
 .progress-bar {
   height: 100%;
-  background-color: #4CAF50;
+  background-color: var(--bg2);
   color: white;
   text-align: center;
   line-height: 20px;
 }
 
 .progress-bar-container button {
-    background-color: #4CAF50;
-    top: 20px;
-    position: absolute;
+  color: #ffff;
+  background-color: var(--bg2);
+  font-weight: bold;
+  opacity: 80%;
+  top: 150px;
+  right: 0;
+  position: absolute;
+  border-radius: 10px;
+  height: 30px;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
