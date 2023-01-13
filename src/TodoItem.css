@@ -1,23 +1,117 @@
+:root{
+    --bg1:#ff2222;
+    --background2:#00ccff;
+    --bg3:#22e622;
+    --i:2;
+}
+
 .TodoItem {
-    background-color: #FAFAFA;
+    
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 24px;
+    flex-direction: column;
+    background: rgba(0,0,0,0.5);
     box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
+    transition: 1s;
+    overflow: hidden;
+    width: calc(100% - 90px);
+    margin-left: calc(12%);
+    
+    
+    
 }
 
 .TodoItem-p {
-    margin: 24px 0 24px 24px;
-    width: calc(100% - 120px);
+    margin: 24px 0 24px 0px;
     font-size: 18px;
     line-height: 24px;
     font-weight: 400;
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    flex-direction: column;
+
 }
+
+.TodoItem:hover {
+    background: var(--bg3);
+    transition: 1s;
+    box-shadow: 0 0 5px var(--bg3),
+    0 0 15px var(--bg3),
+    0 0 30px var(--bg3),
+    0 0 50px var(--bg3);
+
+}
+
+.TodoItem-p::before {
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 350px;
+    background: var(--bg1);
+    transition: 1s;
+    animation: animate 4s linear infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+.TodoItem:hover::before{
+    width: 120%;
+}
+@keyframes animate 
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }    
+    100%
+    {
+        transform: rotate(360deg);
+    }  
+}
+
+.TodoItem::after{
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background: #0e1538;
+    transition: 0.5s;
+}
+
+.TodoItem-p--complete::before {
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 350px;
+    background: var(--bg3);
+    transition: 1s;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+
 .TodoItem-p--complete {
     text-decoration: line-through;
 }
+
+span {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: 0.5s;
+}
+
+span:hover {
+    opacity: 1;
+}
+
 
 .Icon {
     cursor: pointer;
@@ -36,14 +130,15 @@
     left: 12px;
 }
 .Icon-check--active {
-    color: #4caf50;
+    color: rgb(132, 255, 0);
 }
 
 .Icon-delete {
     position: absolute;
-    top: -24px;
     right: 0;
+    
 }
 .Icon-delete:hover {
     color: red;
 }
+

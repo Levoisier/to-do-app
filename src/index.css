@@ -1,10 +1,15 @@
 body {
   margin: 0;
   padding: 0;
-  background: #F2F4F5;
-  color: #1E1E1F;
+  background: #0e1538;
+  color: white;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  background-image: url('https://videohive.img.customer.envatousercontent.com/files/0eb28ec3-e2fa-4ee1-8cfe-1fbfd5f53af7/inline_image_preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=e05cd47aeee82d66117e80a842fe6a2c');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: relative;  
 }
+
 
 #root {
   margin: 0 24px;
