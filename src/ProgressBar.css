@@ -15,11 +15,13 @@
 }
 
 .progress-bar {
+  width: 0%;
   height: 100%;
   background-color: var(--bg2);
-  color: white;
+  color: #ffff;
   text-align: center;
   line-height: 20px;
+  transition: width 0.8s ease-in-out;
 }
 
 .progress-bar-container button {
@@ -33,4 +35,8 @@
   border-radius: 10px;
   height: 30px;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+.progress-bar.animate {
+  width: 50%; /* new width */
 }

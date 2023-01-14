@@ -128,9 +128,10 @@ span:hover {
 .Icon-check {
     position: absolute;
     left: 12px;
+    color: var(--bg3);
 }
 .Icon-check--active {
-    color: rgb(132, 255, 0);
+    color: var(--bg1);
 }
 
 .Icon-delete {
@@ -139,6 +140,6 @@ span:hover {
     
 }
 .Icon-delete:hover {
-    color: red;
+    color: var(--bg1);
 }
 
