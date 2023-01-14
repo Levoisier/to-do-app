@@ -1,11 +1,5 @@
 import React from 'react';
-import { TodoCounter } from './TodoCounter';
-import { TodoSearch } from './TodoSearch';
-import { ProgressBar } from './ProgressBar'; 
-import { TodoList } from './TodoList';
-import { TodoItem } from './TodoItem';
-import { CreateTodoButton } from './CreateTodoButton';
-import { AuthorInfo } from './AuthorInfo';
+import { AppUI } from './AppUI';
 import './App.css';
 
 const defaultTodos = [
@@ -61,34 +55,15 @@ function App() {
 
 
   return (
-    <React.Fragment>
-      <h1 className='neon-title'>Keep it up!</h1>
-      <TodoCounter 
-        total={parseInt(totalTodos)}
-        completed={parseInt(completedTodos)}
-      />
-      <ProgressBar 
-        total={parseInt(totalTodos)}
-        completed={parseInt(completedTodos)}
-      />
-      <TodoSearch 
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-      />
-      <TodoList>
-        {foundTodos.map(todo => (
-          <TodoItem
-            key={todo.text}
-            text={todo.text}
-            completed={todo.completed}
-            onComplete={() => completeTodo(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}
-          />
-        ))}
-      </TodoList>
-      <CreateTodoButton />
-      <AuthorInfo />
-    </React.Fragment>
+    <AppUI 
+      totalTodos={totalTodos}
+      completedTodos={completedTodos}
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      searchedTodos={foundTodos}
+      completeTodo={completeTodo}
+      deleteTodo={deleteTodo}
+    />
   );
 }
 
