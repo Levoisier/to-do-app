@@ -39,9 +39,16 @@
   font-size: 2em; 
   font-weight: bold; 
   text-align: center; 
-  animation: neon 1.5s ease-in-out infinite; 
+  animation: neon 2s ease-in-out infinite; 
 }
 
+.neon-title-2 {
+  color: var(--bg3);
+  font-size: 1.5em; 
+  font-weight: bold; 
+  text-align: center;
+  padding-top: 15px;  
+}
 
 @keyframes neon {
   from {
