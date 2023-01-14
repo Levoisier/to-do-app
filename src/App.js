@@ -5,6 +5,7 @@ import { ProgressBar } from './ProgressBar';
 import { TodoList } from './TodoList';
 import { TodoItem } from './TodoItem';
 import { CreateTodoButton } from './CreateTodoButton';
+import { AuthorInfo } from './AuthorInfo';
 import './App.css';
 
 const defaultTodos = [
@@ -85,8 +86,8 @@ function App() {
           />
         ))}
       </TodoList>
-
       <CreateTodoButton />
+      <AuthorInfo />
     </React.Fragment>
   );
 }
