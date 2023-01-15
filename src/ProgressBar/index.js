@@ -5,8 +5,12 @@ import './ProgressBar.css';
 
 let ProgressBar = () => {
    
-  const { totalTodos, completedTodos } = React.useContext(TodoContext);
+  let { totalTodos, completedTodos } = React.useContext(TodoContext);
   const [animate, setAnimate] = useState(false);
+  
+  if (!totalTodos){
+    totalTodos = 1
+  }
   let progressPercent = (completedTodos / totalTodos * 100).toFixed(0)
 
   useEffect(() => { 

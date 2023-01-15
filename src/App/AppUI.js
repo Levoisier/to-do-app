@@ -2,6 +2,9 @@ import React from 'react';
 import { TodoContext } from '../TodoContext';
 import { TodoCounter } from '../TodoCounter';
 import { TodoSearch } from '../TodoSearch';
+import { TodosError } from '../TodosError';
+import { TodosLoading } from '../TodosLoading';
+import { EmptyTodos } from '../EmptyTodos';
 import { ProgressBar } from '../ProgressBar'; 
 import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
@@ -33,9 +36,9 @@ function AppUI() {
             <h1 className='neon-title-2'>My TO-DO's</h1>
             <TodoSearch/>
             <TodoList>
-                {error && <p> ERROR</p>}
-                {loading && <p> Loading...</p>}
-                {(!loading && !searchedTodos.length) && <p> Add your first TO-DO!</p>}
+                {error && <TodosError error={error}/>}
+                {loading && <TodosLoading/>}
+                {(!loading && !searchedTodos.length) && <EmptyTodos />}
 
                 {searchedTodos.map(todo => (
                     <TodoItem
