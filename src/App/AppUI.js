@@ -1,39 +1,34 @@
 import React from 'react';
+import { TodoContext } from '../TodoContext';
 import { TodoCounter } from '../TodoCounter';
 import { TodoSearch } from '../TodoSearch';
 import { ProgressBar } from '../ProgressBar'; 
 import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
 import { CreateTodoButton } from '../CreateTodoButton';
+import { Modal } from '../Modal';
 import { AuthorInfo } from '../AuthorInfo';
 
-function AppUI({
-    loading,
-    error,
-    totalTodos,
-    completedTodos,
-    searchValue,
-    setSearchValue,
-    searchedTodos,
-    completeTodo,
-    deleteTodo,
-    }){
+function AppUI() {
+
+    const { 
+        error, 
+        loading, 
+        searchedTodos, 
+        completeTodo, 
+        deleteTodo
+    } = React.useContext(TodoContext)
+
+
     return(
         <React.Fragment>
             <h1 className='neon-title'>Keep it up!</h1>
-            <TodoCounter 
-                total={parseInt(totalTodos)}
-                completed={parseInt(completedTodos)}
-            />
-            <ProgressBar 
-                total={parseInt(totalTodos)}
-                completed={parseInt(completedTodos)}
-            />
+
+            <TodoCounter/>
+            <ProgressBar/>
+
             <h1 className='neon-title-2'>My TO-DO's</h1>
-            <TodoSearch 
-                searchValue={searchValue}
-                setSearchValue={setSearchValue}
-            />
+            <TodoSearch/>
             <TodoList>
                 {error && <p> ERROR</p>}
                 {loading && <p> Loading...</p>}
@@ -47,10 +42,19 @@ function AppUI({
                         onComplete={() => completeTodo(todo.text)}
                         onDelete={() => deleteTodo(todo.text)}
                     />
-                ))}
+                ))
+                }
+
             </TodoList>
+
+            <Modal>
+                <p> {searchedTodos[0]?.text} </p>
+            </Modal>
+
             <CreateTodoButton />
+
             <AuthorInfo />
+
         </React.Fragment>
     );
 }
