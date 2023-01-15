@@ -2,6 +2,8 @@
   --bg1:#ff2222;
   --bg2:#00ccff;
   --bg3:#22e622;
+  --bg4:#195fd9;
+
   --i:2;
 }
 
@@ -35,7 +37,6 @@
 
 .neon-title {
   color: var(--bg2); 
-  text-shadow: 0 0 2px var(--bg1), 0 0 5px var(--bg1), 0 0 10px var(--bg1), 0 0 15px var(--bg1), 0 0 20px var(--bg1), 0 0 25px var(--bg1), 0 0 30px var(--bg1);
   font-size: 2em; 
   font-weight: bold; 
   text-align: center; 
@@ -43,7 +44,7 @@
 }
 
 .neon-title-2 {
-  color: var(--bg3);
+  color: var(--bg2);
   font-size: 1.5em; 
   font-weight: bold; 
   text-align: center;
@@ -52,9 +53,9 @@
 
 @keyframes neon {
   from {
-    text-shadow: 0 0 2px var(--bg1), 0 0 5px var(--bg1), 0 0 10px var(--bg1), 0 0 15px var(--bg1), 0 0 20px var(--bg1), 0 0 25px var(--bg1), 0 0 30px var(--bg1);
+    text-shadow: 0 0 2px var(--bg4), 0 0 5px var(--bg4), 0 0 10px var(--bg4), 0 0 15px var(--bg4), 0 0 20px var(--bg4), 0 0 25px var(--bg4), 0 0 30px var(--bg4);
   }
   to {
-    text-shadow: 0 0 4px var(--bg1), 0 0 10px var(--bg1), 0 0 20px var(--bg1), 0 0 30px var(--bg1), 0 0 40px var(--bg1), 0 0 50px var(--bg1), 0 0 60px var(--bg1);
+    text-shadow: 0 0 4px var(--bg4), 0 0 10px var(--bg4), 0 0 20px var(--bg4), 0 0 30px var(--bg4), 0 0 40px var(--bg4), 0 0 50px var(--bg4), 0 0 60px var(--bg4);
   }
 }
