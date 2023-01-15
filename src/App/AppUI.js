@@ -16,7 +16,9 @@ function AppUI() {
         loading, 
         searchedTodos, 
         completeTodo, 
-        deleteTodo
+        deleteTodo,
+        openModal,
+        setOpenModal
     } = React.useContext(TodoContext)
 
 
@@ -46,12 +48,14 @@ function AppUI() {
                 }
 
             </TodoList>
-
-            <Modal>
+            
+            {!!openModal && (
+                <Modal>
                 <p> {searchedTodos[0]?.text} </p>
-            </Modal>
+                </Modal>
+            )}
 
-            <CreateTodoButton />
+            <CreateTodoButton/>
 
             <AuthorInfo />
 
